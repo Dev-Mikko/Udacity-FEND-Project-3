@@ -4,7 +4,7 @@
 
 let cards = document.querySelectorAll('.deck .card');
 
-let unmatchedCards, moves, lifes, starsNumber, lifesNumber, t, scoreUp;
+let unmatchedCards, moves, lifes, t, scoreUp;
 
 const starsArea = document.querySelector('.stars');
 
@@ -39,8 +39,8 @@ let points = document.querySelector('#points');
  */
 
 function restartGame() {
-	starsNumber = starsArea.childElementCount;
-	lifesNumber = lifesArea.childElementCount;
+	let starsNumber = starsArea.childElementCount;
+	let lifesNumber = lifesArea.childElementCount;
 
 	hideModal();
 	unmatchedCards = 16;
@@ -256,7 +256,7 @@ function wrongMatch() {
 			}
 		}
 		timerStop();
-		starsNumber = starsArea.childElementCount;
+		let starsNumber = starsArea.childElementCount;
 		for(let i = 0; i < starsNumber; i++) {
 			starsArea.firstElementChild.remove();
 		}
@@ -287,7 +287,7 @@ function scoreUpdate() {
  */
 
 function showModal() {
-	starsNumber = starsArea.childElementCount;
+	let starsNumber = starsArea.childElementCount;
 	let modalTitle = document.querySelector('.modal-title');
 	let modalText = document.querySelector('.modal-text');
 
@@ -306,7 +306,7 @@ function showModal() {
 }
 
 function hideModal() {
-	starsNumber = points.childElementCount;
+	let starsNumber = points.childElementCount;
 
 	for(let i = 0; i < starsNumber; i++) {
 		points.firstElementChild.remove();
